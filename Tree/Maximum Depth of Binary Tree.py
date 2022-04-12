@@ -15,6 +15,7 @@
     
     
 #BFS : queue 
+from collections import deque 
 class Solution:
     def maxDepth(self, root):
         if not root:
