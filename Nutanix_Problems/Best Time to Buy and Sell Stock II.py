@@ -17,4 +17,3 @@ def maxProfit(prices):
 
 prices = [1,6,8,7,9,11,12,13]
 print(maxProfit(prices)) # 5 + 2 + 3 + 1 + 1 + 1 = 13
-dfdf
