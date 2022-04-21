@@ -1,9 +1,7 @@
-class Solution:
-    def letterCombinations(self, digits):
+def letterCombinations(digits: str):
+    res = []
 
-        res = []
-
-        digitToChar = {"2": "abc", 
+    digitToChar = {"2": "abc", 
                        "3": "def", 
                        "4": "ghi", 
                        "5": "jkl", 
@@ -12,29 +10,28 @@ class Solution:
                        "8": "tuv", 
                        "9": "wxyz"}
 
-    #digits = "23"
-    #Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+    def backtrack(i, curStr):
+
+        if len(curStr) == len(digits):
+
+            res.append(curStr)
+
+            return
+
+        for c in digitToChar[digits[i]]:
+
+            backtrack(i+1, curStr+c)
+
+    if digits:
+        backtrack(0,"")
+
+    return res
+
+digits = "234"
+print(letterCombinations(digits))
 
 
-        def backtracking(i, curstr):
-
-            if len(curstr) == len(digits):
-
-                res.append(curstr)
-                return
-            
-            for c in digitToChar[digits[i]]:
-
-                backtracking(i+1, curstr + c)
-
-        if digits:
-            backtracking(0,"")
-
-    
-        return res
-                
-
-            
 
 
 
