@@ -10,7 +10,7 @@ class MaxStack:
         
 
         self.stack.append(x)
-        if x>= self.maxStack[-1] or self.maxStack:
+        if not self.maxStack or x >= self.maxStack[-1]:
             self.maxStack.append(x)
 
     def pop(self) -> int:
@@ -39,10 +39,12 @@ class MaxStack:
 
         temp = []
 
-        while self.stack[-1] != self.maxStack[-1]:
+        while self.stack[-1]  != self.maxStack[-1];
+
             temp.append(self.stack[-1])
             self.stack.pop()
 
+        
         res = self.stack.pop()
         self.maxStack.pop()
 
@@ -52,6 +54,7 @@ class MaxStack:
             temp.pop()
 
         return res
+
 
 
 
