@@ -1,16 +1,23 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
-        
+
+    def twoSum(self, nums, target):
+
         visited = {}
 
-        for i, num in enumerate(nums):
+        for index, value in enumerate(nums):
 
-            diff = target - num
-            if diff in visited:
-                return[i, visited[diff]]
-            visited[num] = i
+            v1 = target - value
+            if v1 in visited:
+                return [index, visited[v1]]
+
+            else:
+                visited[value] = index
 
         return False
 
-            
+
+res = Solution()
+nums = [2, 7, 11, 15]
+target = 18
+
+print(res.twoSum(nums, target))
