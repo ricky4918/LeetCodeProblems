@@ -10,3 +10,10 @@ class Solution:
             answer[i] *= postfix
             postfix *= nums[i]
         return answer
+
+
+nums = [1,2,3,4]
+
+p = Solution()
+
+print(p.productExceptSelf(nums))
